@@ -9,7 +9,10 @@ import org.springframework.web.reactive.function.client.WebClient;
 public class WebClientConfig {
 
     @Bean
-    @LoadBalanced
+    @LoadBalanced //create a load-balanced client
+
+    //injected into other components to create instances of WebClient for making HTTP request
+    //WebClient is a non-blocking, reactive web client introduced in Spring WebFlux.
     public WebClient.Builder webClientBuilder(){
         return WebClient.builder();
     }
